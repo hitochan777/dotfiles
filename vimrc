@@ -34,6 +34,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+tnoremap <silent> jk <C-\><C-n>
 
 "dein Scripts-----------------------------
 if !&compatible

@@ -25,6 +25,12 @@ fi
 # zplug load --verbose
 zplug load
 
+# bindkey "^[OA" history-substring-search-up
+# bindkey "^[OB" history-substring-search-down
+
+bindkey "^[OA" history-substring-search-up
+bindkey "^[OB" history-substring-search-down
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -41,9 +47,6 @@ export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 export EDITOR='nvim'
 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
-
 alias g="jump"
 alias s="bookmark"
 alias d="deletemark"
@@ -53,3 +56,8 @@ alias l="showmarks"
 setupsolarized dircolors.ansi-light
 
 # [[ $SHLVL != "2" ]] && tmux new
+
+export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
+export LIBRARY_PATH="$HOME/local/lib:$LIBRARY_PATH"
+export CPLUS_INCLUDE_PATH="$HOME/local/include:$CPLUS_INCLUDE_PATH"
+export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
