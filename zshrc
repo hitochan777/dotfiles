@@ -1,3 +1,5 @@
+bindkey -e
+
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
@@ -25,9 +27,6 @@ fi
 # zplug load --verbose
 zplug load
 
-# bindkey "^[OA" history-substring-search-up
-# bindkey "^[OB" history-substring-search-down
-
 bindkey "^[OA" history-substring-search-up
 bindkey "^[OB" history-substring-search-down
 
@@ -35,6 +34,11 @@ bindkey "^[OB" history-substring-search-down
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
 
 ### CONFIG ###
 setopt append_history
@@ -52,6 +56,7 @@ alias s="bookmark"
 alias d="deletemark"
 alias p="showmarks"
 alias l="showmarks"
+alias ls="ls --color"
 
 setupsolarized dircolors.ansi-light
 
