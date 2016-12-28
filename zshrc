@@ -8,10 +8,10 @@ fi
 
 source ~/.zplug/init.zsh
 
-zplug "zsh-users/zsh-autosuggestions", nice:10
+zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", nice:18
-zplug "zsh-users/zsh-history-substring-search", nice:19
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "joel-porquet/zsh-dircolors-solarized"
 zplug "jocelynmallon/zshmarks"
 
@@ -57,6 +57,8 @@ alias d="deletemark"
 alias p="showmarks"
 alias l="showmarks"
 alias ls="ls --color"
+
+export PATH="/home/hitochan/.cargo/bin:$PATH"
 
 setupsolarized dircolors.ansi-light
 
