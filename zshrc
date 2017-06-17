@@ -12,7 +12,6 @@ zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "joel-porquet/zsh-dircolors-solarized"
 zplug "jocelynmallon/zshmarks"
 
 zplug "themes/ys", from:oh-my-zsh
@@ -40,6 +39,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
+# golang
+export GOPATH="$HOME/go"
+export PATH="$HOME/go/bin:$PATH"
+
 ### CONFIG ###
 setopt append_history
 setopt extended_history
@@ -63,12 +66,17 @@ alias l="showmarks"
 alias ls="ls --color"
 
 export PATH="/home/hitochan/.cargo/bin:$PATH"
-
-setupsolarized dircolors.ansi-light
-
-# [[ $SHLVL != "2" ]] && tmux new
+export PATH=$PATH:/usr/local/go/bin
 
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="$HOME/local/lib:$LIBRARY_PATH"
 export CPLUS_INCLUDE_PATH="$HOME/local/include:$CPLUS_INCLUDE_PATH"
 export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
+
+# nim
+export PATH=$PATH:$HOME/.nimble/bin:$HOME/tools/nim/bin
+
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"

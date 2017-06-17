@@ -1,0 +1,8 @@
+[user]
+	email = hitochan777@gmail.com
+	name = Hitoshi Otsuki
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
