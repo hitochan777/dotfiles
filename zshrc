@@ -29,16 +29,6 @@ zplug load
 bindkey "^[OA" history-substring-search-up
 bindkey "^[OB" history-substring-search-down
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-
 # golang
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
@@ -76,7 +66,5 @@ export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
 # nim
 export PATH=$PATH:$HOME/.nimble/bin:$HOME/tools/nim/bin
 
-# goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
