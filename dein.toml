@@ -79,3 +79,6 @@ repo = 'hallison/vim-markdown'
 
 [[plugins]]
 repo = 'xolox/vim-misc'
+
+[[plugins]]
+repo = 'prettier/vim-prettier'

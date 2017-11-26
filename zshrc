@@ -68,3 +68,6 @@ export PATH=$PATH:$HOME/.nimble/bin:$HOME/tools/nim/bin
 
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+
+# meteor
+export PATH="$HOME/.meteor":$PATH
