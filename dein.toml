@@ -82,3 +82,6 @@ repo = 'xolox/vim-misc'
 
 [[plugins]]
 repo = 'prettier/vim-prettier'
+
+[[plugins]]
+repo = 'tomlion/vim-solidity' 
