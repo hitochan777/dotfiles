@@ -71,3 +71,9 @@ eval "$(anyenv init -)"
 
 # meteor
 export PATH="$HOME/.meteor":$PATH
+
+# n
+export N_PREFIX=$HOME/.local
+
+# npm
+export PATH=$HOME/.npm-global/bin:$PATH
