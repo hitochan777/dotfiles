@@ -85,3 +85,9 @@ repo = 'prettier/vim-prettier'
 
 [[plugins]]
 repo = 'tomlion/vim-solidity' 
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
