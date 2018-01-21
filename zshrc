@@ -77,3 +77,6 @@ export N_PREFIX=$HOME/.local
 
 # npm
 export PATH=$HOME/.npm-global/bin:$PATH
+
+# direnv settings
+eval "$(direnv hook zsh)"
