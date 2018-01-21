@@ -13,6 +13,7 @@ set wildmenu
 set noswapfile
 set splitbelow
 set ambiwidth=double
+set backupcopy=yes
 
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
 
@@ -63,6 +64,7 @@ if dein#load_state(s:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
+
 " Install missing plugins
 if has('vim_starting') && dein#check_install()
   call dein#install()
