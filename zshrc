@@ -80,3 +80,6 @@ export PATH=$HOME/.npm-global/bin:$PATH
 
 # direnv settings
 eval "$(direnv hook zsh)"
+
+# ts-node
+export TS_NODE_TYPE_CHECK=true
