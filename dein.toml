@@ -91,3 +91,6 @@ repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
