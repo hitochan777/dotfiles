@@ -37,6 +37,9 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 tnoremap <silent> jk <C-\><C-n>
 
+" python3
+let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
+
 "dein Scripts-----------------------------
 if !&compatible
   set nocompatible
