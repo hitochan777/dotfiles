@@ -7,6 +7,17 @@ build = 'make'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+depends = ['neomru.vim']
+on_event = 'BufRead'
+hook_add = '''
+nmap <silent> <C-u><C-t> :<C-u>Denite -default-action=tabopen filetype<CR>
+nmap <silent> <C-u><C-p> :<C-u>Denite -default-action=tabopen file_rec<CR>
+nmap <silent> <C-u><C-j> :<C-u>Denite -default-action=tabopen line<CR>
+nmap <silent> <C-u><C-g> :<C-u>Denite -default-action=tabopen grep<CR>
+nmap <silent> <C-u><C-]> :<C-u>DeniteCursorWord -default-action=tabopen grep<CR>
+nmap <silent> <C-u><C-u> :<C-u>Denite -default-action=tabopen file_mru<CR>
+nmap <silent> <C-u><C-y> :<C-u>Denite -default-action=tabopen neoyank<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
