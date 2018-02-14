@@ -10,26 +10,6 @@ repo = 'Shougo/neocomplete.vim'
 if   = '''has('lua')'''
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = ['vimproc']
-on_cmd = ['Unite']
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-depends = ['unite.vim']
-on_source = ['unite.vim']
-
-[[plugins]]
-repo = 'thinca/vim-unite-history'
-on_source = 'unite.vim'
-
-[[plugins]]
-repo = 'osyo-manga/unite-filetype'
-
-[[plugins]]
-repo = 'Shougo/unite-sudo'
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
