@@ -1,3 +1,4 @@
+" options {{{
 set tabstop=4
 set shiftwidth=4
 set showmatch
@@ -14,13 +15,17 @@ set noswapfile
 set splitbelow
 set ambiwidth=double
 set backupcopy=yes
+set foldmethod=marker
+" }}}
 
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
+let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
 
-"mapping
+" mapping {{{
+
 let mapleader = "--"
 let maplocalleader = "\\"
-" inoremap
+
 inoremap jk <esc>
 vnoremap jk <esc>
 inoremap <esc> <NOP>
@@ -31,14 +36,16 @@ nnoremap k gk
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 vnoremap <C-C> "+y
+" surround with double quotes
+vnoremap sdq c"<C-R>""
+" surround with double quotes
+vnoremap ssq c'<C-R>"'
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 tnoremap <silent> jk <C-\><C-n>
-
-" python3
-let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
+" }}}
 
 "dein Scripts-----------------------------
 if !&compatible
