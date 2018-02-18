@@ -21,6 +21,7 @@ set foldmethod=marker
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
 let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
 
+
 " mapping {{{
 
 let mapleader = "--"
@@ -84,5 +85,6 @@ endif
 "End dein Scripts-------------------------
 
 " Put these lines at the end
+colorscheme molokai
 filetype plugin indent on
 syntax on
