@@ -49,9 +49,8 @@ export HISTFILE=~/.zsh_history
 export EDITOR='nvim'
 
 alias g="jump"
-alias s="bookmark"
+alias ss="bookmark"
 alias d="deletemark"
-alias p="showmarks"
 alias l="showmarks"
 alias ls="ls --color"
 
