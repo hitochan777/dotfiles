@@ -21,6 +21,17 @@ set foldmethod=marker
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
 let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
 
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 1
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+" the browser to use
+let g:livedown_browser = "'google-chrome'"
 
 " mapping {{{
 

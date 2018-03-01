@@ -94,3 +94,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'shime/vim-livedown'
