@@ -82,3 +82,11 @@ eval "$(direnv hook zsh)"
 
 # ts-node
 export TS_NODE_TYPE_CHECK=true
+
+############  Google Cloud SDK settings ##############
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+######################################################
+if [ -f '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc'; fi
