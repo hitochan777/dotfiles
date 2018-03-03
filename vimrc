@@ -56,7 +56,11 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-tnoremap <silent> jk <C-\><C-n>
+
+" nvim specific settings
+if has("nvim")
+  tnoremap <silent> jk <C-\><C-n>
+endif
 " }}}
 
 "dein Scripts-----------------------------
@@ -96,6 +100,6 @@ endif
 "End dein Scripts-------------------------
 
 " Put these lines at the end
-colorscheme molokai
+silent! colorscheme molokai
 filetype plugin indent on
 syntax on
