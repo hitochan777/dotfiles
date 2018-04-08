@@ -53,6 +53,9 @@ alias ss="bookmark"
 alias d="deletemark"
 alias l="showmarks"
 alias ls="ls --color"
+alias yb="yarn build"
+alias yt="yarn test"
+alias yc="yarn clean"
 
 export PATH="/home/hitochan/.cargo/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
