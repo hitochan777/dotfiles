@@ -11,3 +11,4 @@ ln -s $SCRIPTPATH/latexmkrc $HOME/.latexmkrc
 ln -s $SCRIPTPATH/zshrc $HOME/.zshrc
 ln -s $SCRIPTPATH/tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPTPATH/czrc $HOME/.czrc
+ln -s $SCRIPTPATH/gitconfig $HOME/.gitconfig
