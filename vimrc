@@ -97,8 +97,10 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
-"End dein Scripts-------------------------
+" molokai setting
+let g:rehash256 = 1
 
+"End dein Scripts-------------------------
 " Put these lines at the end
 silent! colorscheme molokai
 filetype plugin indent on
