@@ -57,7 +57,7 @@ alias yb="yarn build"
 alias yt="yarn test"
 alias yc="yarn clean"
 
-export PATH="/home/hitochan/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
