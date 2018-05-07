@@ -93,3 +93,4 @@ if [ -f '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/ho
 # The next line enables shell command completion for gcloud.
 ######################################################
 if [ -f '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc'; fi
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
