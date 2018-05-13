@@ -101,6 +101,12 @@ endif
 let g:rehash256 = 1
 
 "End dein Scripts-------------------------
+
+" prettier {{{
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" }}}
+
 " Put these lines at the end
 silent! colorscheme molokai
 filetype plugin indent on
