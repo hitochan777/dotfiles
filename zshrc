@@ -48,15 +48,19 @@ export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 export EDITOR='nvim'
 
+# zshmark
 alias g="jump"
 alias ss="bookmark"
 alias d="deletemark"
 alias l="showmarks"
-alias ls="ls --color"
+# yarn
 alias yb="yarn build"
 alias yt="yarn test"
 alias yc="yarn clean"
-
+# pipenv
+alias ppr="pipenv run"
+# misc
+alias ls="ls --color"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
