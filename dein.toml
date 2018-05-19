@@ -103,3 +103,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'cohama/agit.vim'
+
+[[plugins]]
+repo = 'jparise/vim-graphql'
