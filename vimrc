@@ -16,6 +16,9 @@ set splitbelow
 set ambiwidth=double
 set backupcopy=yes
 set foldmethod=marker
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " }}}
 
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
@@ -98,7 +101,7 @@ endif
 " }}}
 
 " molokai setting
-let g:rehash256 = 1
+" let g:rehash256 = 1
 
 "End dein Scripts-------------------------
 
@@ -108,6 +111,10 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " }}}
 
 " Put these lines at the end
-silent! colorscheme molokai
+" silent! colorscheme molokai
+let g:solarized_use16 = 1
+set background=dark
+colorscheme solarized8
+
 filetype plugin indent on
 syntax on

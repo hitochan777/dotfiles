@@ -106,3 +106,6 @@ repo = 'cohama/agit.vim'
 
 [[plugins]]
 repo = 'jparise/vim-graphql'
+
+[[plugins]]
+repo = 'lifepillar/vim-solarized8'
