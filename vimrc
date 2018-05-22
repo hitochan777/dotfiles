@@ -24,6 +24,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
 let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
 
+" markdown live viewer {{{
 " should markdown preview get shown automatically upon opening markdown buffer
 let g:livedown_autorun = 1
 
@@ -35,11 +36,9 @@ let g:livedown_port = 1337
 
 " the browser to use
 let g:livedown_browser = "'google-chrome'"
+" }}}
 
 " mapping {{{
-
-let mapleader = "--"
-let maplocalleader = "\\"
 
 inoremap jk <esc>
 vnoremap jk <esc>
@@ -48,8 +47,6 @@ inoremap <c-u> <esc>viwUi<esc>A
 nnoremap yy 0v$hy
 nnoremap j gj
 nnoremap k gk
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
 vnoremap <C-C> "+y
 " surround with double quotes
 vnoremap sdq c"<C-R>""
@@ -100,9 +97,6 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
-" molokai setting
-" let g:rehash256 = 1
-
 "End dein Scripts-------------------------
 
 " prettier {{{
@@ -110,11 +104,12 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 " }}}
 
-" Put these lines at the end
-" silent! colorscheme molokai
+" color scheme {{{
 let g:solarized_use16 = 1
 set background=dark
 colorscheme solarized8
+" }}}
 
+" Put these lines at the end
 filetype plugin indent on
 syntax on
