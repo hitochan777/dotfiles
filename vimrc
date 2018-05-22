@@ -99,6 +99,15 @@ endif
 
 "End dein Scripts-------------------------
 
+" file explorer settings {{{
+nnoremap - :Vexplore<cr>
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+" }}}
+
 " prettier {{{
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
