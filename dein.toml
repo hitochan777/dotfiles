@@ -109,3 +109,6 @@ repo = 'jparise/vim-graphql'
 
 [[plugins]]
 repo = 'lifepillar/vim-solarized8'
+
+[[plugins]]
+repo = 'larsbs/vimterial_dark'

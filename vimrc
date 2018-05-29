@@ -114,9 +114,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " }}}
 
 " color scheme {{{
-let g:solarized_use16 = 1
-set background=dark
-colorscheme solarized8
+colorscheme vimterial_dark
 " }}}
 
 " Put these lines at the end
