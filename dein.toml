@@ -112,3 +112,7 @@ repo = 'lifepillar/vim-solarized8'
 
 [[plugins]]
 repo = 'larsbs/vimterial_dark'
+
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+
