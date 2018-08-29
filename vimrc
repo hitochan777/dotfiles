@@ -23,6 +23,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
 let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
+let g:python_host_prog = expand('~/.anyenv/envs/pyenv/versions/neovim/bin/python')
 
 " markdown live viewer {{{
 " should markdown preview get shown automatically upon opening markdown buffer

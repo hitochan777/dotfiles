@@ -124,3 +124,6 @@ build = 'bash install.sh'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'takac/vim-spotifysearch'
