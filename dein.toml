@@ -116,3 +116,11 @@ repo = 'larsbs/vimterial_dark'
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'

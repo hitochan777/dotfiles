@@ -113,6 +113,31 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 " }}}
 
+" LSP {{{
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+            \ 'javascript': ['tcp://127.0.0.1:2089'],
+            \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+            \ 'typescript': ['tcp://127.0.0.1:2089'],
+            \ 'typescript.tsx': ['tcp://127.0.0.1:2089'],
+            \ }
+
+augroup LanguageClient_config
+    autocmd!
+    autocmd User LanguageClientStarted setlocal signcolumn=yes
+    autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> <Leader>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <Leader>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <Leader>lf :call LanguageClient_textDocument_formatting()<CR>
+
+" }}}
+
 " color scheme {{{
 colorscheme vimterial_dark
 " }}}
