@@ -117,13 +117,5 @@ repo = 'larsbs/vimterial_dark'
 repo = 'udalov/kotlin-vim'
 
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'takac/vim-spotifysearch'
