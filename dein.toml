@@ -119,3 +119,6 @@ repo = 'udalov/kotlin-vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
