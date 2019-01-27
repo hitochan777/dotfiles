@@ -128,12 +128,12 @@ let g:airline_theme='luna'
 " }}}
 
 " lsp {{{
-if executable('gopls')
+if executable('golsp')
   augroup LspGo
     au!
     autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'gopls',
-          \ 'cmd': {server_info->['gopls', '-mode', 'stdio', '-logfile', '~/golsp.log']},
+          \ 'name': 'go-lang',
+          \ 'cmd': {server_info->['go-langserver', '-mode', 'stdio']},
           \ 'whitelist': ['go'],
           \ })
     autocmd FileType go setlocal omnifunc=lsp#complete
