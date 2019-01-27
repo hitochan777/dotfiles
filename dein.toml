@@ -66,9 +66,6 @@ repo = 'tpope/vim-surround'
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
-repo = 'vim-scripts/sudo.vim'
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
@@ -91,9 +88,6 @@ repo = 'fatih/vim-go'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'shime/vim-livedown'
