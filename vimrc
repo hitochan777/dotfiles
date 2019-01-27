@@ -118,6 +118,11 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 colorscheme vimterial_dark
 " }}}
 
+" airline {{{
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='luna'
+" }}}
+
 " Put these lines at the end
 filetype plugin indent on
 syntax on

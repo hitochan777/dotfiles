@@ -116,3 +116,12 @@ on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+
+[[plugins]]
+repo = "vim-airline/vim-airline"
+
+[[plugins]]
+repo = "vim-airline/vim-airline-themes"
