@@ -142,6 +142,17 @@ endif
 let g:lsp_async_completion = 1
 " }}}
 
+
+" Automatically creates a directory if it does not exist yet
+augroup Mkdir
+  autocmd!
+  autocmd BufWritePre *
+    \ if !isdirectory(expand("<afile>:p:h")) |
+        \ call mkdir(expand("<afile>:p:h"), "p") |
+    \ endif
+augroup END
+" }}}
+
 " Put these lines at the end
 filetype plugin indent on
 syntax on
