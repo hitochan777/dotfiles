@@ -82,7 +82,7 @@ export PATH="$HOME/.meteor":$PATH
 export N_PREFIX=$HOME/.local
 
 # npm
-export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$HOME/.yarn/bin:$PATH
 
 # direnv settings
 eval "$(direnv hook zsh)"
@@ -98,3 +98,15 @@ if [ -f '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/ho
 ######################################################
 if [ -f '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc'; fi
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# deno
+export PATH=$HOME/.deno/bin:$PATH
+
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+# kubectl settings
+source <(kubectl completion zsh)
+alias k="kubectl"
+# configure hal auto-complete 
+. /etc/bash_completion.d/hal
