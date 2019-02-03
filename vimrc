@@ -57,6 +57,7 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+noremap yc gg"+yG
 
 " nvim specific settings
 if has("nvim")
