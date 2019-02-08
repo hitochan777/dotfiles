@@ -59,6 +59,8 @@ alias yt="yarn test"
 alias yc="yarn clean"
 # pipenv
 alias ppr="pipenv run"
+eval "$(pipenv --completion)"
+
 # misc
 alias ls="ls --color"
 export PATH="$HOME/.local/bin:$PATH"
