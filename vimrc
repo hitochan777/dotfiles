@@ -70,11 +70,6 @@ if !&compatible
   set nocompatible
 endif
 
-" reset augroup
-augroup MyAutoCmd
-  autocmd!
-augroup END
-
 " dein settings {{{
 " Automatically install dein
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
