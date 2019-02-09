@@ -36,7 +36,7 @@ let g:livedown_open = 1
 let g:livedown_port = 1337
 
 " the browser to use
-let g:livedown_browser = "'google-chrome'"
+let g:livedown_browser = "google-chrome"
 " }}}
 
 " mapping {{{
