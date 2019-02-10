@@ -140,3 +140,6 @@ repo = "prabirshrestha/asyncomplete-lsp.vim"
 
 [[plugins]]
 repo = "natebosch/vim-lsc"
+
+[[plugins]]
+repo = "danro/rename.vim"

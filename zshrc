@@ -57,6 +57,10 @@ alias l="showmarks"
 alias yb="yarn build"
 alias yt="yarn test"
 alias yc="yarn clean"
+
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 # pipenv
 alias ppr="pipenv run"
 eval "$(pipenv --completion)"
@@ -73,9 +77,6 @@ export C_INCLUDE_PATH="$HOME/local/include:$C_INCLUDE_PATH"
 
 # nim
 export PATH=$PATH:$HOME/.nimble/bin:$HOME/tools/nim/bin
-
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
 
 # meteor
 export PATH="$HOME/.meteor":$PATH
