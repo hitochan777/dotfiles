@@ -111,5 +111,3 @@ export PATH=$HOME/.cargo/bin:$PATH
 # kubectl settings
 source <(kubectl completion zsh)
 alias k="kubectl"
-# configure hal auto-complete 
-. /etc/bash_completion.d/hal
