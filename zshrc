@@ -1,5 +1,15 @@
 bindkey -e
 
+unameOut=$(uname -s)
+case "${unameOut}" in
+  Linux*)   machine=Linux;;
+  Darwin*)  machine=Mac;;
+  *)        machine="UNKNOWN:${unameOut}"
+esac
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
@@ -26,8 +36,17 @@ fi
 # zplug load --verbose
 zplug load
 
-bindkey "^[OA" history-substring-search-up
-bindkey "^[OB" history-substring-search-down
+if [ "${machine}" = "Mac" ]
+then
+  UPKEY='\e[A'
+  DOWNKEY='\e[B'
+else
+  UPKEY="^[OA"
+  DOWNKEY="^[OB"
+fi
+
+bindkey "$UPKEY" history-substring-search-up
+bindkey "$DOWNKEY" history-substring-search-down
 
 # golang
 export GOPATH="$HOME/go"
@@ -57,9 +76,11 @@ alias l="showmarks"
 alias yb="yarn build"
 alias yt="yarn test"
 alias yc="yarn clean"
+# use nvim for vim (only necessary in mac)
+alias vim=nvim
 
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+eval "$(anyenv init - zsh)"
 
 # pipenv
 alias ppr="pipenv run"
@@ -111,3 +132,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 # kubectl settings
 source <(kubectl completion zsh)
 alias k="kubectl"
+
+# you need this for ls to properly work in mac
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
