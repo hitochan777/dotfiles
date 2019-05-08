@@ -96,6 +96,11 @@ endif
 
 "End dein Scripts-------------------------
 
+" denite {{{
+" call denite#custom#var('file/rec', 'command',
+      " \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+" }}}
+
 " file explorer settings {{{
 nnoremap - :Vexplore<cr>
 let g:netrw_banner = 0
@@ -143,9 +148,9 @@ let g:lsp_async_completion = 1
 augroup Mkdir
   autocmd!
   autocmd BufWritePre *
-    \ if !isdirectory(expand("<afile>:p:h")) |
+        \ if !isdirectory(expand("<afile>:p:h")) |
         \ call mkdir(expand("<afile>:p:h"), "p") |
-    \ endif
+        \ endif
 augroup END
 " }}}
 
