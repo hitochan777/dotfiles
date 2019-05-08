@@ -116,11 +116,11 @@ export TS_NODE_TYPE_CHECK=true
 
 ############  Google Cloud SDK settings ##############
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/tools/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/tools/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
 ######################################################
-if [ -f '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hitochan/tools/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/tools/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/tools/google-cloud-sdk/completion.zsh.inc"; fi
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # deno
