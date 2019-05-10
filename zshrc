@@ -78,6 +78,7 @@ alias yt="yarn test"
 alias yc="yarn clean"
 # use nvim for vim (only necessary in mac)
 alias vim=nvim
+export PATH=$HOME/tools/nvim/bin:$PATH
 
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
@@ -88,7 +89,7 @@ eval "$(pipenv --completion)"
 
 # misc
 alias ls="ls --color"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
