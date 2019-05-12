@@ -62,7 +62,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap yc gg"+yG
-nnoremap oe :Defx `expand('%:p:h')` -search=`expand('%:p')` -split=vertical -winwidth=50 -direction=topleft<CR>
+nnoremap <c-o>e :Defx `expand('%:p:h')` -search=`expand('%:p')` -split=vertical -winwidth=50 -direction=topleft<CR>
 
 " nvim specific settings
 if has("nvim")
@@ -129,17 +129,45 @@ let g:airline_theme='luna'
 " }}}
 
 " lsp {{{
-if executable('golsp')
+if executable('gopls')
   augroup LspGo
     au!
     autocmd User lsp_setup call lsp#register_server({
           \ 'name': 'go-lang',
-          \ 'cmd': {server_info->['go-langserver', '-mode', 'stdio']},
+          \ 'cmd': {server_info->['gopls', '-mode', 'stdout']},
           \ 'whitelist': ['go'],
           \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
+    autocmd BufWritePre *.go LspDocumentFormatSync
+    " autocmd FileType go setlocal omnifunc=lsp#complete
   augroup END
 endif
+
+if executable('solargraph')
+  augroup LspRuby
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'ruby',
+          \ 'cmd': {server_info->['solargraph', 'stdio']},
+          \ 'whitelist': ['ruby'],
+          \ })
+    autocmd FileType ruby setlocal omnifunc=lsp#complete
+  augroup END
+endif
+
+if executable('javascript-typescript-stdio')
+  augroup LspJS
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'js-ts',
+          \ 'cmd': {server_info->['javascript-typescript-stdio', '-l', 'hello.log']},
+          \ 'whitelist': ['javascript', "javascript.jsx"],
+          \ })
+    autocmd FileType javascript setlocal omnifunc=lsp#complete
+  augroup END
+endif
+
+let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_async_completion = 1
 " }}}
 
@@ -214,7 +242,6 @@ call defx#custom#option('_', {
 
 
 " defx Config: end -------------------
-
 
 " Put these lines at the end
 filetype plugin indent on
