@@ -20,9 +20,9 @@ set termguicolors
 set smartcase
 set updatetime=100
 set encoding=utf8
-" set guifont=HackNerdFontComplete-Regular:h11
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let mapleader = "-"
 " }}}
 
 let g:html_indent_inctags = "html,body,head,tbody,script,table,span,tr,td,th,div,p"
@@ -62,7 +62,6 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap yc gg"+yG
-nnoremap <c-o>e :Defx `expand('%:p:h')` -search=`expand('%:p')` -split=vertical -winwidth=50 -direction=topleft<CR>
 
 " nvim specific settings
 if has("nvim")
@@ -102,7 +101,7 @@ endif
 "End dein Scripts-------------------------
 
 " file explorer settings {{{
-nnoremap - :Vexplore<cr>
+nnoremap <leader>fe :Vexplore<cr>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
