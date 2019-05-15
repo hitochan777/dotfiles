@@ -6,50 +6,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-depends = ['neomru.vim']
-on_event = 'BufRead'
-hook_add = '''
-nmap <silent> <C-u><C-t> :<C-u>Denite -default-action=tabopen filetype<CR>
-nmap <silent> <C-u><C-p> :<C-u>Denite -default-action=tabopen file_rec<CR>
-nmap <silent> <C-u><C-j> :<C-u>Denite -default-action=tabopen line<CR>
-nmap <silent> <C-u><C-g> :<C-u>Denite -default-action=tabopen grep<CR>
-nmap <silent> <C-u><C-]> :<C-u>DeniteCursorWord -default-action=tabopen grep<CR>
-nmap <silent> <C-u><C-u> :<C-u>Denite -default-action=tabopen file_mru<CR>
-nmap <silent> <C-u><C-y> :<C-u>Denite -default-action=tabopen neoyank<CR>
-nmap <silent> <C-u><C-w> :<C-u>DeniteCursorWord -default-action=tabopen grep<CR>
-'''
-hook_post_source = '''
-call denite#custom#var('file/rec', 'command',
-	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts',
-			\ ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-let s:denite_win_width_percent = 0.8
-let s:denite_win_height_percent = 0.6
-" Change denite default options
-call denite#custom#option('default', {
-      \ 'split': 'floating',
-      \ 'winwidth': &columns * s:denite_win_width_percent,
-      \ 'wincol': (&columns - (&columns * s:denite_win_width_percent)) / 2,
-      \ 'winheight': &lines * s:denite_win_height_percent,
-      \ 'winrow': (&lines - (&lines * s:denite_win_height_percent)) / 2,
-      \ })
-
-'''
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if   = '''has('lua')'''
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
@@ -69,14 +25,6 @@ on_ft = ['markdown', 'mkd']
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'sorah/unite-ghq'
-on_source = 'unite.vim'
-
-[[plugins]]
-repo = 'Shougo/unite-help'
-on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'vim-latex/vim-latex'
@@ -125,15 +73,6 @@ repo = 'larsbs/vimterial_dark'
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# hook_add = '''
-# let g:deoplete#enable_at_startup = 1
-# " call deoplete#custom#var('omni', 'input_patterns', {
-# "     \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
-# "     \})
-# '''
-
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
@@ -180,6 +119,9 @@ hook_add = '''
 '''
 # }}}
 
+[[plugins]]
+repo = "rhysd/git-messenger.vim"
+
 # explorer {{{
 [[plugins]]
 repo = "Shougo/defx.nvim"
@@ -190,3 +132,6 @@ repo = "kristijanhusak/defx-icons"
 [[plugins]]
 repo = "ryanoasis/vim-devicons"
 # }}}
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
