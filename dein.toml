@@ -139,5 +139,6 @@ repo = "ryanoasis/vim-devicons"
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 hook_add = '''
-nnoremap <leader>fz :Files<c-r>
+nnoremap <leader>fz :Files<CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 '''
