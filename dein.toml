@@ -101,6 +101,21 @@ repo = "prabirshrestha/asyncomplete-lsp.vim"
 repo = "natebosch/vim-lsc"
 
 [[plugins]]
+repo = "Shougo/deoplete.nvim"
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = "Shougo/neosnippet.vim"
+
+[[plugins]]
+repo = "Shougo/neosnippet-snippets"
+
+[[plugins]]
+repo = "honza/vim-snippets"
+
+[[plugins]]
 repo = "danro/rename.vim"
 
 # vim {{{
