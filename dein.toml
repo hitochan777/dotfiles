@@ -162,3 +162,6 @@ hook_add = '''
 nnoremap <leader>fz :Files<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 '''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
