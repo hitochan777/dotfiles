@@ -127,50 +127,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='luna'
 " }}}
 
-" lsp {{{
-if executable('gopls')
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'go-lang',
-          \ 'cmd': {server_info->['gopls', '-mode', 'stdout']},
-          \ 'whitelist': ['go'],
-          \ })
-    autocmd BufWritePre *.go LspDocumentFormatSync
-    " autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-if executable('solargraph')
-  augroup LspRuby
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'ruby',
-          \ 'cmd': {server_info->['solargraph', 'stdio']},
-          \ 'whitelist': ['ruby'],
-          \ })
-    autocmd FileType ruby setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-if executable('javascript-typescript-stdio')
-  augroup LspJS
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'js-ts',
-          \ 'cmd': {server_info->['javascript-typescript-stdio', '-l', 'hello.log']},
-          \ 'whitelist': ['javascript', "javascript.jsx"],
-          \ })
-    autocmd FileType javascript setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-let g:lsp_signs_enabled = 1         " enable signs
-let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-let g:lsp_async_completion = 1
-" }}}
-
-
 " Automatically creates a directory if it does not exist yet
 augroup Mkdir
   autocmd!
@@ -179,6 +135,27 @@ augroup Mkdir
         \ call mkdir(expand("<afile>:p:h"), "p") |
         \ endif
 augroup END
+" }}}
+
+" MaximizeToggle {{{
+nnoremap <C-W>m :call MaximizeToggle()<CR>
+
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    call feedkeys("\<c-w>|", t)
+    " only
+  endif
+endfunction
 " }}}
 
 " defx Config: end -------------------

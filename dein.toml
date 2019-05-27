@@ -24,9 +24,6 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd']
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
 repo = 'vim-latex/vim-latex'
 on_ft = 'tex'
 
@@ -86,27 +83,6 @@ repo = "vim-airline/vim-airline"
 repo = "vim-airline/vim-airline-themes"
 
 [[plugins]]
-repo = "prabirshrestha/async.vim"
-
-[[plugins]]
-repo = "prabirshrestha/vim-lsp"
-
-[[plugins]]
-repo = "prabirshrestha/asyncomplete.vim"
-
-[[plugins]]
-repo = "prabirshrestha/asyncomplete-lsp.vim"
-
-[[plugins]]
-repo = "natebosch/vim-lsc"
-
-[[plugins]]
-repo = "Shougo/deoplete.nvim"
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
 repo = "Shougo/neosnippet.vim"
 hook_add = '''
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -118,12 +94,9 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 repo = "Shougo/neosnippet-snippets"
 
 [[plugins]]
-repo = "honza/vim-snippets"
-
-[[plugins]]
 repo = "danro/rename.vim"
 
-# vim {{{
+# git {{{
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -164,4 +137,10 @@ nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 '''
 
 [[plugins]]
+repo = 'lvht/mru'
+
+[[plugins]]
 repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
