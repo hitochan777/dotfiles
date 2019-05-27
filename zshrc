@@ -1,5 +1,11 @@
 bindkey -e
 
+# zsh-peco-history {{{
+export ZSH_PECO_HISTORY_OPTS="--layout=top-down --initial-filter=Fuzzy"
+# https://github.com/jimeh/zsh-peco-history#zsh_peco_history_dedup
+export ZSH_PECO_HISTORY_DEDUP=1
+# }}}
+
 unameOut=$(uname -s)
 case "${unameOut}" in
   Linux*)   machine=Linux;;
@@ -21,8 +27,10 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions", defer:0
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "jimeh/zsh-peco-history", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "jocelynmallon/zshmarks"
+zplug "b4b4r07/enhancd", use:init.sh
 
 zplug "themes/ys", from:oh-my-zsh
 
@@ -136,3 +144,7 @@ alias k="kubectl"
 
 # you need this for ls to properly work in mac
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# enhanced {{{
+export ENHANCD_FILTER=peco:fzf
+# }}}
