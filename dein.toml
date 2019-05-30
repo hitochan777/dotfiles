@@ -134,10 +134,14 @@ repo = 'junegunn/fzf.vim'
 hook_add = '''
 nnoremap <leader>fz :Files<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <leader>bb :Buffer<CR>
 '''
 
 [[plugins]]
-repo = 'lvht/mru'
+repo = 'pbogut/fzf-mru.vim'
+hook_add = '''
+nnoremap <leader>mr :FZFMru<CR>
+'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
