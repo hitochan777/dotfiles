@@ -45,6 +45,7 @@ repo = 'xolox/vim-misc'
 [[plugins]]
 repo = 'prettier/vim-prettier'
 rev = 'release/1.x'
+on_ft = ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'svelte']
 
 [[plugins]]
 repo = 'tomlion/vim-solidity' 

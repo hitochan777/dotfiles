@@ -115,8 +115,10 @@ autocmd FileType vue syntax sync fromstart
 " }}}
 
 " prettier {{{
+" I don't want quickfix to appear for every change
+let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte PrettierAsync
 " }}}
 
 " color scheme {{{
