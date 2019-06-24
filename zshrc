@@ -139,8 +139,8 @@ export PATH=$HOME/.deno/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # kubectl settings
-source <(kubectl completion zsh)
-alias k="kubectl"
+# source <(kubectl completion zsh)
+# alias k="kubectl"
 
 # you need this for ls to properly work in mac
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
