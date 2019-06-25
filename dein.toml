@@ -162,3 +162,11 @@ nmap <silent> t<C-g> :TestVisit<CR>
 
 [[plugins]]
 repo = 'burner/vim-svelte'
+
+[[plugins]]
+repo = 'w0rp/ale'
+add_hook = '''
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+'''
