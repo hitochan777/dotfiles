@@ -12,3 +12,4 @@ ln -s $SCRIPTPATH/zshrc $HOME/.zshrc
 ln -s $SCRIPTPATH/tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPTPATH/czrc $HOME/.czrc
 ln -s $SCRIPTPATH/gitconfig $HOME/.gitconfig
+ln -s $SCRIPTPATH/zprezto-contrib $HOME/.zprezto-contrib

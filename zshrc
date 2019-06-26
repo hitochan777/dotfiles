@@ -1,11 +1,5 @@
 bindkey -e
 
-# zsh-peco-history {{{
-export ZSH_PECO_HISTORY_OPTS="--layout=top-down --initial-filter=Fuzzy"
-# https://github.com/jimeh/zsh-peco-history#zsh_peco_history_dedup
-export ZSH_PECO_HISTORY_DEDUP=1
-# }}}
-
 unameOut=$(uname -s)
 case "${unameOut}" in
   Linux*)   machine=Linux;;
@@ -17,32 +11,21 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
+if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ]]; then
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  setopt EXTENDED_GLOB
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  done
 fi
 
-source ~/.zplug/init.zsh
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-zplug "zsh-users/zsh-autosuggestions", defer:0
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "jocelynmallon/zshmarks"
-zplug "jimeh/zsh-peco-history", defer:2
-zplug "b4b4r07/enhancd", use:init.sh
-
-zplug "themes/ys", from:oh-my-zsh
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# zplug load --verbose
-zplug load
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-history-substring-search", defer:3
+# zplug "jocelynmallon/zshmarks"
+# zplug "jimeh/zsh-peco-history", defer:2
+# zplug "b4b4r07/enhancd", use:init.sh
 
 if [ "${machine}" = "Mac" ]
 then
@@ -132,20 +115,21 @@ if [ -f "$HOME/tools/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/tools/
 if [ -f "$HOME/tools/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/tools/google-cloud-sdk/completion.zsh.inc"; fi
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-# deno
-export PATH=$HOME/.deno/bin:$PATH
-
-# rust
-export PATH=$HOME/.cargo/bin:$PATH
-
-# kubectl settings
-# source <(kubectl completion zsh)
-# alias k="kubectl"
-
 # you need this for ls to properly work in mac
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # enhanced {{{
 export ENHANCD_FILTER=peco:fzf
 export ENHANCD_DISABLE_DOT=1
+# }}}
+
+# peco {{{
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco --layout=top-down --initial-filter=Fuzzy` 
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 # }}}
