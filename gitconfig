@@ -1033,6 +1033,6 @@
   ##
 
 [push]
-    default = matching
+	default = simple
 [credential]
 	helper = store
