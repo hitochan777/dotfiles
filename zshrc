@@ -120,9 +120,6 @@ export PATH=$HOME/.npm-global/bin:$HOME/.yarn/bin:$PATH
 # direnv settings
 eval "$(direnv hook zsh)"
 
-# ts-node
-export TS_NODE_TYPE_CHECK=true
-
 ############  Google Cloud SDK settings ##############
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/tools/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/tools/google-cloud-sdk/path.zsh.inc"; fi
