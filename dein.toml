@@ -117,6 +117,7 @@ repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
+rev = 'release'
 
 [[plugins]]
 repo = 'janko/vim-test'
