@@ -146,3 +146,5 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export ENHANCD_FILTER=peco:fzf
 export ENHANCD_DISABLE_DOT=1
 # }}}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
