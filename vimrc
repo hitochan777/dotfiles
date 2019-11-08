@@ -169,6 +169,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
 " }}}
 
 " fzf {{{
