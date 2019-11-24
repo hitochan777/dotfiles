@@ -48,6 +48,7 @@ let g:livedown_browser = "google-chrome"
 " mapping {{{
 
 inoremap jk <esc>
+nnoremap <C-n>h :nohl<cr>
 vnoremap jk <esc>
 inoremap <esc> <NOP>
 inoremap <c-u> <esc>viwUi<esc>A
