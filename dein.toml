@@ -134,3 +134,6 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
+
+[[plugins]]
+repo = 'sainnhe/vim-color-forest-night'
