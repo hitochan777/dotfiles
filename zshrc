@@ -129,6 +129,8 @@ if [ -f "$HOME/tools/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/tools/
 if [ -f "$HOME/tools/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/tools/google-cloud-sdk/completion.zsh.inc"; fi
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+alias copy="xclip -sel clipboard"
+
 # deno
 export PATH=$HOME/.deno/bin:$PATH
 
