@@ -149,4 +149,8 @@ export ENHANCD_FILTER=peco:fzf
 export ENHANCD_DISABLE_DOT=1
 # }}}
 
+# exa {{{
+alias el="exa"
+# }}}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
