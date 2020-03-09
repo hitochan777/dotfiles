@@ -146,7 +146,8 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # enhanced {{{
 export ENHANCD_FILTER=peco:fzf
-export ENHANCD_DISABLE_DOT=1
+export ENHANCD_HYPHEN_NUM=50
+# export ENHANCD_DISABLE_DOT=1
 # }}}
 
 # exa {{{
