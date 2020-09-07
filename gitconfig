@@ -21,7 +21,7 @@
     g = grep
     l = log
     m = merge
-    o = checkout
+    o = switch 
     p = pull
     r = remote
     s = status
@@ -77,11 +77,6 @@
 
   # commit with a message
     cm = commit --message
-
-  ### checkout ###
-
-  # checkout - update the working tree to match a branch or paths. [same as "o" for "out"]
-    co = checkout
 
   ### cherry-pick ###
 
@@ -286,6 +281,12 @@
 
   # status with short format and showing branch and tracking info.
     ssb = status --short --branch
+
+  ### switch ###
+
+  # switch to another existing branch
+    sw = switch
+    new = switch -c
 
   ### ALIAS MANAGEMENT ###
 
