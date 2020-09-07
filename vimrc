@@ -126,7 +126,9 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " color scheme {{{
 " colorscheme vimterial_dark
-colorscheme forest-night
+" colorscheme forest-night
+" colorscheme nord
+colorscheme iceberg
 " }}}
 
 " airline {{{
