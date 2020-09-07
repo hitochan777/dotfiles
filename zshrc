@@ -154,4 +154,8 @@ export ENHANCD_HYPHEN_NUM=50
 alias el="exa"
 # }}}
 
+# dotnet {{{
+export PATH=$HOME/.dotnet/tools:$PATH
+# }}}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
