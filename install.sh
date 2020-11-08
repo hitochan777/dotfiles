@@ -9,6 +9,7 @@ ln -s $SCRIPTPATH/dein.toml $HOME/dein.toml # for vim
 ln -s $SCRIPTPATH/ideavimrc $HOME/.ideavimrc
 ln -s $SCRIPTPATH/latexmkrc $HOME/.latexmkrc
 ln -s $SCRIPTPATH/zshrc $HOME/.zshrc
+ln -s $SCRIPTPATH/zprofile $HOME/.zprofile
 ln -s $SCRIPTPATH/tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPTPATH/czrc $HOME/.czrc
 ln -s $SCRIPTPATH/gitconfig $HOME/.gitconfig

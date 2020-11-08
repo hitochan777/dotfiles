@@ -88,17 +88,10 @@ alias yc="yarn clean"
 alias vim=nvim
 export PATH=$HOME/tools/nvim/bin:$PATH
 
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh)"
-
-# pipenv
-alias ppr="pipenv run"
-eval "$(pipenv --completion)"
-
 # misc
 alias ls="ls --color"
 export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
+export PATH=/snap/bin:/usr/local/go/bin:$PATH
 
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 export LIBRARY_PATH="$HOME/local/lib:$LIBRARY_PATH"
@@ -117,8 +110,6 @@ export N_PREFIX=$HOME/.local
 # npm
 export PATH=$HOME/.npm-global/bin:$HOME/.yarn/bin:$PATH
 
-# direnv settings
-eval "$(direnv hook zsh)"
 
 ############  Google Cloud SDK settings ##############
 # The next line updates PATH for the Google Cloud SDK.
