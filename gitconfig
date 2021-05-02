@@ -1040,5 +1040,5 @@
 	helper = store
 [init]
 	defaultBranch = main
-# [core]
-#	pager = git-split-diffs --color | less -RFX
+[core]
+pager = git-split-diffs --color | less -RFX
