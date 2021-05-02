@@ -1038,3 +1038,7 @@
 	default = simple
 [credential]
 	helper = store
+[init]
+	defaultBranch = main
+# [core]
+#	pager = git-split-diffs --color | less -RFX

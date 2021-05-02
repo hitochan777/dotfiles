@@ -9,3 +9,5 @@ eval "$(pipenv --completion)"
 
 # direnv settings
 eval "$(direnv hook zsh)"
+
+export PATH="$PATH:$HOME/.dotnet/tools"

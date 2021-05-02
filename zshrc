@@ -150,3 +150,6 @@ export PATH=$HOME/.dotnet/tools:$PATH
 # }}}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
