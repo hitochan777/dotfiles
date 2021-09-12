@@ -10,10 +10,14 @@ set guioptions-=e
 set expandtab
 set smartindent
 set wildmode=longest,list,full
+set formatoptions-=cro
 set wildmenu
 set noswapfile
 set splitbelow
-set ambiwidth=double
+if !exists('g:vscode')
+  " dunno why but ambiwidth breaks neovim-vscode
+  set ambiwidth=double
+endif
 set backupcopy=yes
 set foldmethod=marker
 set termguicolors
@@ -50,22 +54,23 @@ let g:livedown_browser = "google-chrome"
 inoremap jk <esc>
 nnoremap <C-n>h :nohl<cr>
 vnoremap jk <esc>
-inoremap <esc> <NOP>
+if !exists('g:vscode')
+  inoremap <esc> <NOP>
+endif
 inoremap <c-u> <esc>viwUi<esc>A
 nnoremap yy 0v$hy
 nnoremap j gj
 nnoremap k gk
 vnoremap <C-C> "+y
 " surround with double quotes
-vnoremap sdq c"<C-R>""
+vnoremap sdq c"<c-r>""
 " surround with double quotes
-vnoremap ssq c'<C-R>"'
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap yc gg"+yG
-" noremap <leader>ot :6split | term
+vnoremap ssq c'<c-r>"'
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+noremap yc gg"+yg
 
 " nvim specific settings
 if has("nvim")

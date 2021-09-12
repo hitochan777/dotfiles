@@ -34,9 +34,6 @@ rev = 'release/1.x'
 on_ft = ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'svelte']
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
 repo = 'fatih/vim-go'
 
 [[plugins]]
@@ -115,31 +112,15 @@ nnoremap <leader>mr :FZFMru<CR>
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-
-[[plugins]]
-repo = 'janko/vim-test'
-add_hook = '''
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-'''
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# rev = 'release'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'andymass/vim-matchup'
-
-[[plugins]]
-repo = 'sainnhe/vim-color-forest-night'
-
-[[plugins]]
-repo = 'arcticicestudio/nord-vim'
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
