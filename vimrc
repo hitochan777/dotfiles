@@ -167,57 +167,61 @@ function! MaximizeToggle()
 endfunction
 " }}}
 
-" coc {{{
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+if exists('g:vscode')
+    " VSCode extension
+else
+  " ordinary neovim
+  " coc {{{
+  " Remap keys for gotos
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+  augroup SyntaxSettings
+      autocmd!
+      autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+      autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+  augroup END
+  " }}}
 
-augroup SyntaxSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-augroup END
-" }}}
+  " fzf {{{
+  set rtp+=/usr/local/opt/fzf
 
-" fzf {{{
-set rtp+=/usr/local/opt/fzf
+  " https://github.com/junegunn/fzf.vim/issues/664#issuecomment-476438294
+  let $FZF_DEFAULT_OPTS='--layout=reverse'
+  let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
-" https://github.com/junegunn/fzf.vim/issues/664#issuecomment-476438294
-let $FZF_DEFAULT_OPTS='--layout=reverse'
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+  function! FloatingFZF()
+    let buf = nvim_create_buf(v:false, v:true)
+    call setbufvar(buf, '&signcolumn', 'no')
 
-function! FloatingFZF()
-  let buf = nvim_create_buf(v:false, v:true)
-  call setbufvar(buf, '&signcolumn', 'no')
+    let height = &lines - 3
+    let width = float2nr(&columns - (&columns * 2 / 10))
+    let col = float2nr((&columns - width) / 2)
 
-  let height = &lines - 3
-  let width = float2nr(&columns - (&columns * 2 / 10))
-  let col = float2nr((&columns - width) / 2)
+    let opts = {
+          \ 'relative': 'editor',
+          \ 'row': 1,
+          \ 'col': col,
+          \ 'width': width,
+          \ 'height': height
+          \ }
 
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'row': 1,
-        \ 'col': col,
-        \ 'width': width,
-        \ 'height': height
-        \ }
+    call nvim_open_win(buf, v:true, opts)
+  endfunction
 
-  call nvim_open_win(buf, v:true, opts)
-endfunction
-
-" }}}
+  " }}}
+endif
 
 " Put these lines at the end
 filetype plugin indent on
