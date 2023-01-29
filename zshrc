@@ -31,7 +31,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "jocelynmallon/zshmarks"
 zplug "jimeh/zsh-peco-history", defer:2
 zplug "b4b4r07/enhancd", use:init.sh
-
+# zplug "themes/frisk", from:oh-my-zsh
 zplug "themes/ys", from:oh-my-zsh
 
 if ! zplug check --verbose; then
@@ -89,7 +89,8 @@ alias vim=nvim
 export PATH=$HOME/tools/nvim/bin:$PATH
 
 # misc
-alias ls="ls --color"
+export LS_COLORS=$LS_COLORS:'di=1;35:'
+alias ls="exa --icons"
 export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
 export PATH=/snap/bin:/usr/local/go/bin:$PATH
 
@@ -153,3 +154,19 @@ export PATH=$HOME/.dotnet/tools:$PATH
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/hitochan/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+# bun completions
+[ -s "/home/hitochan/.bun/_bun" ] && source "/home/hitochan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/home/hitochan/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
