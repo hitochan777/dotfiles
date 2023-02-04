@@ -35,64 +35,6 @@ require('packer').startup(function(use)
     end
   }
 
-  -- place this in one of your configuration file(s)
-  local hop = require('hop')
-  local directions = require('hop.hint').HintDirection
-  vim.keymap.set('', 'f', function()
-    hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
-  end, {remap=true})
-  vim.keymap.set('', 'F', function()
-    hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
-  end, {remap=true})
-  vim.keymap.set('', 'fw', function()
-    hop.hint_words({ direction = directions.AFTER_CURSOR, current_line_only = false })
-  end, {remap=true})
-  vim.keymap.set('', 'Fw', function()
-    hop.hint_words({ direction = directions.BEFORE_CURSOR, current_line_only = false })
-  end, {remap=true})
-
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
-
-  -- disable netrw at the very start of your init.lua (strongly advised)
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
-
-  -- set termguicolors to enable highlight groups
-  vim.opt.termguicolors = true
-
-  -- empty setup using defaults
-  require("nvim-tree").setup()
-
-  -- OR setup with some options
-  require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-      width = 30,
-      mappings = {
-        list = {
-          { key = "u", action = "dir_up" },
-        },
-      },
-    },
-    renderer = {
-      group_empty = true,
-    },
-    filters = {
-      dotfiles = true,
-    },
-  })
-
-  vim.keymap.set('', 'tt', function()
-    local api = require("nvim-tree.api")
-    api.tree.toggle({focus=true})
-  end, {remap=false})
-
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -128,15 +70,11 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
   use {
-    'pwntester/octo.nvim',
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    config = function ()
-      require"octo".setup()
-    end
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
@@ -171,6 +109,50 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   -- pattern = vim.fn.expand '$MYVIMRC',
   pattern = '*.lua',
 })
+
+-- place this in one of your configuration file(s)
+local hop = require('hop')
+-- local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_char1({ current_line_only = false })
+end, {remap=true})
+vim.keymap.set('', 'fw', function()
+  hop.hint_words({ current_line_only = false })
+end, {remap=true})
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    width = 30,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+vim.keymap.set('', 'tt', function()
+  local api = require("nvim-tree.api")
+  api.tree.toggle({focus=true})
+end, {remap=false})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
