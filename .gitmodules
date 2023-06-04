@@ -1,0 +1,3 @@
+[submodule "/home/hitochan/dotfiles/nvim"]
+	path = /home/hitochan/dotfiles/nvim
+	url = https://github.com/NvChad/NvChad
