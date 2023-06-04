@@ -10,3 +10,6 @@ ln -s $SCRIPTPATH/zprofile $HOME/.zprofile
 ln -s $SCRIPTPATH/tmux.conf $HOME/.tmux.conf
 ln -s $SCRIPTPATH/czrc $HOME/.czrc
 ln -s $SCRIPTPATH/gitconfig $HOME/.gitconfig
+ln -s $SCRIPTPATH/nvim $HOME/.config/
+ln -s $SCRIPTPATH/nvchad/custom $HOME/.config/nvim/lua/
+

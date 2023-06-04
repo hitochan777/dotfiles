@@ -170,3 +170,6 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export BUN_INSTALL="/home/hitochan/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# serverpod
+export PATH="$PATH":"$HOME/.pub-cache/bin"
