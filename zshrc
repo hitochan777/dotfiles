@@ -90,7 +90,7 @@ export PATH=$HOME/tools/nvim/bin:$PATH
 
 # misc
 export LS_COLORS=$LS_COLORS:'di=1;35:'
-alias ls="exa --icons"
+alias ls="eza --icons"
 export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
 export PATH=/snap/bin:/usr/local/go/bin:$PATH
 
@@ -142,8 +142,8 @@ export ENHANCD_HYPHEN_NUM=50
 # export ENHANCD_DISABLE_DOT=1
 # }}}
 
-# exa {{{
-alias el="exa"
+# eza {{{
+alias el="eza"
 # }}}
 
 # dotnet {{{
@@ -173,3 +173,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # serverpod
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# Wasmer
+export WASMER_DIR="/home/hitochan/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+eval "$(zoxide init zsh)"
