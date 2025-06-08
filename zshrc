@@ -178,4 +178,5 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export WASMER_DIR="/home/hitochan/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
+eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"

@@ -638,9 +638,11 @@
 
   # Delete all branches that have already been merged into the master branch.
     master-cleanse = !git master-cleanse-local; git master-cleanse-remote
+    main-cleanse = !git main-cleanse-local; git main-cleanse-remote
 
   # Delete all local branches that have been merged into the local master branch.
     master-cleanse-local = "!git checkout master && git branch --merged | xargs git branch --delete"
+    main-cleanse-local = "!git checkout main && git branch --merged | xargs git branch --delete"
 
   # Delete all remote branches that have been merged into the remote master branch.
     master-cleanse-remote = !"git branch --remotes --merged origin/master | sed 's# *origin/##' | grep -v '^master$' xargs -I% git push origin :% 2>&1 | grep --colour=never 'deleted'"
@@ -1037,6 +1039,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 [credential]
 	helper = store
 [init]
