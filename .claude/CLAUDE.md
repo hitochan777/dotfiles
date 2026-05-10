@@ -1,11 +1,15 @@
+## General
 * If you are not sure about what you are requested, make sure to clarify what you don't understand.
+
+## Task delegation
 * **As the main agent, your role is only to:**
   * Understand and clarify the task
   * Plan the approach and identify what needs to be done
-  * Brief, spawn, and coordinate subagents
+  * Brief, spawn, and coordinate agent team or subagents
+    * Prefer agent team when communication between agents is beneficial
   * Synthesize subagent results and communicate them to the user
   * Everything else must be delegated to subagents — this overrides the default "don't spawn unless asked" behavior.
-* If no appropriate agent type exists for a task, propose creating one before proceeding.
+* If no appropriate agent type exists for a task, propose creating one before proceeding with /propose-subagent skill
 
 ## Code Explanation Rules
 
