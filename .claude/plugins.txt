@@ -1,0 +1,2 @@
+rust-analyzer-lsp@claude-plugins-official
+skill-creator@claude-plugins-official
