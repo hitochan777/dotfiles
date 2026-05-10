@@ -1,0 +1,18 @@
+# Ignore everything in .claude/ by default
+.claude/*
+
+# Whitelist versioned config files
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/plugins.txt
+
+# Whitelist versioned directories and their contents
+!.claude/skills/
+!.claude/skills/**
+!.claude/agents/
+!.claude/agents/**
+!.claude/commands/
+!.claude/commands/**
+!.claude/plugins/
+!.claude/plugins/**
+
