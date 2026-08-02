@@ -21,7 +21,7 @@ opencode run "<research prompt>" 2>&1
 ```
 
 Key flags:
-- `-m <provider/model>` — override model if user specifies one (e.g. `anthropic/claude-sonnet-4-5`)
+- `-m <provider/model>` — override model if user specifies one (e.g. `anthropic/claude-sonnet-4-6`)
 - `--dir <path>` — run in specific directory (default: current working dir)
 - `--title "<short title>"` — give session a meaningful name
 
