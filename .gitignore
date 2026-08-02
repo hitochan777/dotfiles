@@ -5,6 +5,7 @@
 !.claude/CLAUDE.md
 !.claude/settings.json
 !.claude/plugins.txt
+!.claude/statusline.sh
 
 # Whitelist versioned directories and their contents
 !.claude/skills/
@@ -13,6 +14,4 @@
 !.claude/agents/**
 !.claude/commands/
 !.claude/commands/**
-!.claude/plugins/
-!.claude/plugins/**
 
